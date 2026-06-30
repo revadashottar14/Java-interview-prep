@@ -11,7 +11,7 @@ public class ThreadSafetyDemo {
         // Test each map with 1000 threads all writing at the same time
         testMap("HashMap",            new HashMap<>());
         testMap("Hashtable",          new Hashtable<>());
-        testMap("ConcurrentHashMap",  new ConcurrentHashMap<>());
+        testMap("ConcurrentHashMap",  new ConcurrentHashMap<>());//ConcurrentHashMap locks only the bucket being modified, allowing parallelism.
     }
 
     static void testMap(String name, Map<String, Integer> map) throws InterruptedException {
